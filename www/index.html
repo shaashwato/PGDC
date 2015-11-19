@@ -32,28 +32,30 @@
 </head>
 <body id="body-font">
     <div>
+    <br><br>
+        <h1 class="center">Discount Calculator</h1>
         <div id="" class="center font-20">Price</div>
         <div class="center"><input style="font-size:5em; width:100%" id="price" type="number"></div>
         <div id="" class="center font-20">Discount</div>
         <div class="center"><input style="font-size:5em; width:100%" id="discount" type="number"></div>
         <div id="result" class="font-20"></span>
-    </div>
-    <div style="width:100%; height:20px" class="screen-test"></div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="libraries/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-        $("document").ready(function(){
-            $('#my_test').html("<span style='color:red; font-weight:bold'>READY</spna>");
-            $('#price').keyup(function(){
-                calculate();
-            });
-            $('#discount').keyup(function(){
-                calculate();
-            });
-            function calculate(){
-                var price = $("#price").val();
+        </div>
+        <div style="width:100%; height:20px" class="screen-test"></div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="libraries/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+            $("document").ready(function(){
+                $('#my_test').html("<span style='color:red; font-weight:bold'>READY</spna>");
+                $('#price').keyup(function(){
+                    calculate();
+                });
+                $('#discount').keyup(function(){
+                    calculate();
+                });
+                function calculate(){
+                    var price = $("#price").val();
                 // console.log(price);
                 var discount = $("#discount").val();
                 // console.log(price);
@@ -64,6 +66,6 @@
                 $("#result").html('<div>Discounted '+discount_price+'/-<br>Discounted Price: '+discounted_price+'/-</div>');
             };
         });
-    </script>
-</body>
-</html>
+        </script>
+    </body>
+    </html>
