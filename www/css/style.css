@@ -9,6 +9,67 @@
 .font-18{font-size: 18px;}
 .font-20{font-size: 20px;}
 .font-22{font-size: 22px;}
+/*May need to delete*/
 .screen-test{
 	background-color:red;
 }
+.main-body{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.user-input-full-block{
+	margin-bottom:5px;
+	background-color:#808080;
+	border-radius: 5px
+}
+.div-input-box{
+	padding-left:10px;
+	padding-right:15px;
+	padding-bottom:5px
+}
+/*      ==========================================================================
+        Large desktops and laptops
+        ========================================================================== */
+        @media (min-width: 1200px) {
+
+        }
+/*      ==========================================================================
+        Portrait tablets and medium desktops
+        ========================================================================== */
+        @media (min-width: 992px) and (max-width: 1199px) {
+
+        }
+/*      ==========================================================================
+        Portrait tablets and small desktops
+        ========================================================================== */
+        @media (min-width: 768px) and (max-width: 991px) {
+
+        }
+/*      ==========================================================================
+        Landscape phone to portrait tablet
+        ========================================================================== */
+        @media (max-width: 767px) {
+        	.screen-test{
+        		background-color:green;
+        	}
+        }
+/*      ==========================================================================
+        Landscape phones
+        ========================================================================== */
+        @media (max-width: 480px) {
+        	.screen-test{
+        		background-color:yellow;
+        	}
+        }
+/*      ==========================================================================
+        Portrait Mobile
+        ========================================================================== */
+        @media (max-width: 320px) {
+
+        }
+/*      ==========================================================================
+        Mobile
+        ========================================================================== */
+        @media (min-width: 240px) and  (max-width: 319px){
+
+        }

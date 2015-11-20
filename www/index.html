@@ -31,31 +31,55 @@
     <title>Hello World</title>
 </head>
 <body id="body-font">
-    <div>
-    <br><br>
+    <!-- Main Starts -->
+    <div class="main-body"> 
         <h1 class="center">Discount Calculator</h1>
-        <div id="" class="center font-20">Price</div>
-        <div class="center"><input style="font-size:5em; width:100%" id="price" type="number"></div>
-        <div id="" class="center font-20">Discount</div>
-        <div class="center"><input style="font-size:5em; width:100%" id="discount" type="number"></div>
-        <div id="result" class="font-20"></span>
+        <!-- Discount Starts -->
+        <div class="user-input-full-block">
+            <div id="" class="center font-20">Discount</div>
+            <div class="center div-input-box"><input style="font-size:5em; width:100%" id="discount" type="number"></div>
         </div>
+        <!-- Discount Ends -->
+        <!-- Price Starts -->
+        <div class="user-input-full-block">
+            <div id="" class="center font-20">Price</div>
+            <div class="center div-input-box"><input style="font-size:5em; width:100%" id="price" type="number"></div>
+        </div>
+        <!-- Price Ends -->
+    </div>
+    <!-- Main Ends -->
+    <!-- Notifiers Start -->
+    <div>
+        <div>browser Width:<br><span id="screen-width"></span></div>
+        <div>Document Width:<br><span id="document-width"></span></div>
+        <div id="orientation">BD</div>
+        <div id="result" class="font-20"></div>
         <div style="width:100%; height:20px" class="screen-test"></div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="libraries/jquery-1.11.3.min.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-            $("document").ready(function(){
-                $('#my_test').html("<span style='color:red; font-weight:bold'>READY</spna>");
-                $('#price').keyup(function(){
-                    calculate();
-                });
-                $('#discount').keyup(function(){
-                    calculate();
-                });
-                function calculate(){
-                    var price = $("#price").val();
+    </div>
+    <!-- Notifiers End -->        
+</body>
+<footer>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="libraries/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+        $("document").ready(function(){
+            show_resolution();
+            $( window ).on( "orientationchange", function( event ) {
+               show_resolution();
+           });
+
+            $('#my_test').html("<span style='color:red; font-weight:bold'>READY</span>");
+            $('#price').keyup(function(){
+                calculate();
+            });
+            $('#discount').keyup(function(){
+                calculate();
+            });
+            function calculate(){
+                var price = $("#price").val();
                 // console.log(price);
                 var discount = $("#discount").val();
                 // console.log(price);
@@ -65,7 +89,17 @@
                 // console.log(discounted_price);
                 $("#result").html('<div>Discounted '+discount_price+'/-<br>Discounted Price: '+discounted_price+'/-</div>');
             };
+            function show_resolution(){
+                var wh = $(window).height();
+                var dh = $(document).height();
+                var ww = $(window).width();
+                var dw = $(document).width();
+                console.log("window width: "+ww);
+                console.log("document width: "+dw);
+                $('#screen-width').html('window height: '+wh+" width: "+ww);
+                $('#document-width').html('window height: '+dh+" width: "+dw);
+            }
         });
-        </script>
-    </body>
-    </html>
+</script>
+</footer>
+</html>
